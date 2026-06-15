@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Om Verbania</title>
+  <meta name="description" content="Contatta Om Verbania per informazioni su percorsi di guarigione, formazione, ospitalità e prossimi eventi. Scareno, Aurano (Verbania).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .contact-aside {
+      position: sticky;
+      top: 6rem;
+    }
+    .contact-aside__title {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--color-text);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .contact-aside__title em {
+      font-style: italic;
+      color: var(--color-green);
+    }
+    .contact-aside__note {
+      font-size: 13px;
+      color: var(--color-text-mid);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
+    .contact-detail {
+      border-top: 0.5px solid var(--color-rule);
+      padding: 1.25rem 0;
+    }
+    .contact-detail:last-child {
+      border-bottom: 0.5px solid var(--color-rule);
+    }
+    .contact-detail__label {
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .contact-detail__value {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+    .contact-detail__value a {
+      color: var(--color-green);
+      transition: opacity 0.3s;
+    }
+    .contact-detail__value a:hover { opacity: 0.7; }
+
+    .form-success {
+      display: none;
+      padding: 2rem;
+      border: 0.5px solid rgba(61, 92, 53, 0.3);
+      background: rgba(61, 92, 53, 0.04);
+      margin-top: 1.5rem;
+    }
+    .form-success p {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--color-green);
+    }
+    .subject-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .subject-btn {
+      background: none;
+      border: 0.5px solid var(--color-rule);
+      padding: 0.35rem 0.85rem;
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .subject-btn.is-active,
+    .subject-btn:hover {
+      background: var(--color-text);
+      border-color: var(--color-text);
+      color: var(--color-bg);
+    }
+    .form-field--privacy {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-field--privacy input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--color-green);
+      flex-shrink: 0;
+      width: auto;
+      border-bottom: none;
+    }
+    .form-field--privacy label {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .map-placeholder {
+      margin-top: 4rem;
+      background: var(--color-bg-warm);
+      border: 0.5px solid var(--color-rule);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .map-placeholder__label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .map-placeholder__addr {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+    .map-placeholder__note {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      font-weight: 300;
+    }
+    .map-directions {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 1.5rem;
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-green);
+      border-bottom: 0.5px solid rgba(61,92,53,0.3);
+      padding-bottom: 3px;
+      transition: border-color 0.3s;
+    }
+    .map-directions:hover { border-color: var(--color-green); }
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .contact-aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu di navigazione" aria-hidden="true">
+    <button class="mobile-menu__close" id="menuClose">Chiudi</button>
+    <a href="guarigione.html" onclick="closeMenu()">Guarigione</a>
+    <a href="formazione.html" onclick="closeMenu()">Formazione</a>
+    <a href="ospitalita.html" onclick="closeMenu()">Ospitalità</a>
+    <a href="contatti.html" onclick="closeMenu()">Contatti</a>
+  </div>
+
+  <nav class="nav nav--page" id="nav" aria-label="Navigazione principale">
+    <a href="index.html" class="nav__logo">Om <em>Verbania</em></a>
+    <ul class="nav__links">
+      <li><a href="guarigione.html">Guarigione</a></li>
+      <li><a href="formazione.html">Formazione</a></li>
+      <li><a href="ospitalita.html">Ospitalità</a></li>
+      <li><a href="contatti.html" aria-current="page">Contatti</a></li>
+    </ul>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <p class="page-hero__label js-reveal">Inizia da qui</p>
+      <h1 class="page-hero__title js-reveal js-reveal-delay-1">Contatti</h1>
+      <p class="page-hero__sub js-reveal js-reveal-delay-2">
+        Siamo a tua disposizione per qualsiasi domanda su percorsi, formazione, ospitalità o eventi. Il primo passo è sempre una parola.
+      </p>
+    </section>
+
+    <!-- FORM + ASIDE -->
+    <section class="content-section content-section--white">
+      <div class="contact-layout js-reveal">
+
+        <!-- ASIDE INFO -->
+        <aside class="contact-aside">
+          <h2 class="contact-aside__title">Dove <em>trovarci</em></h2>
+          <p class="contact-aside__note">
+            Om Verbania è un'associazione. Non abbiamo uno sportello fisso: ogni percorso inizia con un colloquio, in presenza o a distanza.
+          </p>
+
+          <div class="contact-detail">
+            <span class="contact-detail__label">Sede</span>
+            <span class="contact-detail__value">Scareno, Aurano<br>Verbano Cusio Ossola (VB)</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Social</span>
+            <span class="contact-detail__value">
+              <a href="https://facebook.com/omverbania" target="_blank" rel="noopener">Facebook</a><br>
+              <a href="https://instagram.com/omverbania" target="_blank" rel="noopener">Instagram</a>
+            </span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Risposta</span>
+            <span class="contact-detail__value" style="font-size:13px; font-family: var(--font-sans); font-weight:300; color: var(--color-text-mid);">
+              Di norma rispondiamo entro 2–3 giorni lavorativi.
+            </span>
+          </div>
+        </aside>
+
+        <!-- FORM -->
+        <div>
+          <p class="u-label" style="margin-bottom: 2rem;">Scrivi un messaggio</p>
+
+          <div style="margin-bottom: 1.75rem;">
+            <p style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.75rem;">
+              Mi interessa
+            </p>
+            <div class="subject-options" role="group" aria-label="Seleziona argomento">
+              <button class="subject-btn is-active" type="button" onclick="setSubject(this, 'Informazioni generali')">Informazioni generali</button>
+              <button class="subject-btn" type="button" onclick="setSubject(this, 'Percorso di guarigione')">Guarigione</button>
+              <button class="subject-btn" type="button" onclick="setSubject(this, 'Formazione')">Formazione</button>
+              <button class="subject-btn" type="button" onclick="setSubject(this, 'Ospitalità e B&B')">Ospitalità</button>
+              <button class="subject-btn" type="button" onclick="setSubject(this, 'Prossimi eventi')">Eventi</button>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <input type="hidden" name="subject" id="subjectField" value="Informazioni generali">
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstName">Nome</label>
+                <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+              </div>
+              <div class="form-field">
+                <label for="lastName">Cognome</label>
+                <input type="text" id="lastName" name="lastName" autocomplete="family-name">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Messaggio</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Raccontaci di te e di cosa stai cercando…"></textarea>
+            </div>
+
+            <div class="form-field--privacy">
+              <input type="checkbox" id="privacy" name="privacy" required>
+              <label for="privacy">
+                Ho letto l'informativa sulla privacy e acconsento al trattamento dei miei dati personali per ricevere una risposta a questo messaggio.
+              </label>
+            </div>
+
+            <button type="submit" class="form-submit">
+              Invia il messaggio &rarr;
+            </button>
+
+            <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+              <p>Grazie per averci scritto. Ti risponderemo al più presto.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- COME ARRIVARE -->
+      <div class="map-placeholder js-reveal" style="margin-top: 5rem;">
+        <p class="map-placeholder__label">Come raggiungerci</p>
+        <p class="map-placeholder__addr">Scareno, Aurano (VB)</p>
+        <p class="map-placeholder__note">Da Verbania: circa 30 minuti in auto. Strada provinciale per Aurano, poi segnaletica per Scareno.</p>
+        <a href="https://maps.google.com/?q=Scareno,+Aurano,+VB" target="_blank" rel="noopener" class="map-directions">
+          Apri in Google Maps &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- PERCORSI -->
+    <section class="content-section content-section--warm">
+      <p class="u-label js-reveal" style="margin-bottom: 2.5rem;">Non sai da dove iniziare?</p>
+      <div class="services-grid">
+        <a href="guarigione.html" class="service-card js-reveal js-reveal-delay-1" style="text-decoration:none; display:flex; flex-direction:column;">
+          <span class="service-card__icon"></span>
+          <h3 class="service-card__title">Guarigione</h3>
+          <p class="service-card__desc">Psicoterapia, biotransenergetica e gruppi di benessere per chi sente il bisogno di un supporto o di un percorso di trasformazione.</p>
+          <span style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-green); margin-top:auto; padding-top:1.5rem;">Scopri &rarr;</span>
+        </a>
+        <a href="formazione.html" class="service-card js-reveal js-reveal-delay-2" style="text-decoration:none; display:flex; flex-direction:column;">
+          <span class="service-card__icon"></span>
+          <h3 class="service-card__title">Formazione</h3>
+          <p class="service-card__desc">La Scuola di Counseling Transpersonale per chi vuole fare della cura degli altri una professione o approfondire la propria crescita interiore.</p>
+          <span style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-green); margin-top:auto; padding-top:1.5rem;">Scopri &rarr;</span>
+        </a>
+        <a href="ospitalita.html" class="service-card js-reveal js-reveal-delay-3" style="text-decoration:none; display:flex; flex-direction:column;">
+          <span class="service-card__icon"></span>
+          <h3 class="service-card__title">Ospitalità</h3>
+          <p class="service-card__desc">Il B&B di Scareno: soggiorni nella natura del Verbano, ritiri residenziali e la possibilità di fermarsi per ritrovare sé stessi.</p>
+          <span style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-green); margin-top:auto; padding-top:1.5rem;">Scopri &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">&copy; 2026 Associazione Om &middot; Medicina e Psicologia Integrale e Transpersonale</p>
+    <div class="footer__links">
+      <a href="privacy.html" class="footer__link">Privacy Policy</a>
+      <span class="footer__sep">&middot;</span>
+      <a href="cookie.html" class="footer__link">Cookie</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function setSubject(btn, value) {
+      document.querySelectorAll('.subject-btn').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      document.getElementById('subjectField').value = value;
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      // Simulazione invio — in produzione collegare a backend o servizio email
+      form.style.opacity = '0.4';
+      form.style.pointerEvents = 'none';
+      setTimeout(() => {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }, 600);
+    });
+  </script>
+</body>
+</html>

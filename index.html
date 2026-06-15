@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om Verbania — Psicologia Transpersonale e Biotransenergetica</title>
+  <meta name="description" content="Om Verbania è un'associazione che promuove la medicina e la psicologia integrale e transpersonale, con sede a Scareno, Aurano (Verbania).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader__logo">Om <em>Verbania</em></span>
+    <span class="loader__line"></span>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu di navigazione" aria-hidden="true">
+    <button class="mobile-menu__close" id="menuClose" aria-label="Chiudi menu">Chiudi</button>
+    <a href="guarigione.html" onclick="closeMenu()">Guarigione</a>
+    <a href="formazione.html" onclick="closeMenu()">Formazione</a>
+    <a href="ospitalita.html" onclick="closeMenu()">Ospitalità</a>
+    <a href="contatti.html" onclick="closeMenu()">Contatti</a>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav" aria-label="Navigazione principale">
+    <a href="index.html" class="nav__logo">Om <em>Verbania</em></a>
+    <ul class="nav__links">
+      <li><a href="guarigione.html">Guarigione</a></li>
+      <li><a href="formazione.html">Formazione</a></li>
+      <li><a href="ospitalita.html">Ospitalità</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Apri menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduzione">
+      <div class="hero__bg" aria-hidden="true">
+        <video autoplay muted loop playsinline>
+          <source src="hero-bg.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__content">
+        <p class="hero__eyebrow js-reveal">Scareno · Aurano · Lago Maggiore</p>
+        <h1 class="hero__title js-reveal js-reveal-delay-1">
+          Un luogo di<br>
+          <em>trasformazione</em><br>
+          e presenza
+        </h1>
+        <p class="hero__sub js-reveal js-reveal-delay-2">
+          Psicologia transpersonale, biotransenergetica e crescita integrale.
+          Un'associazione radicata nella natura del Verbano Cusio Ossola.
+        </p>
+        <a href="#percorsi" class="hero__cta js-reveal js-reveal-delay-3">
+          Scopri i percorsi &rarr;
+        </a>
+      </div>
+      <p class="hero__foot" aria-hidden="true">Associazione Om · Verbania</p>
+      <div class="hero__scroll-line" aria-hidden="true"></div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto" aria-labelledby="manifesto-heading">
+      <div class="manifesto__inner">
+        <span class="u-rule u-rule--center js-reveal" aria-hidden="true"></span>
+        <blockquote class="manifesto__quote js-reveal js-reveal-delay-1">
+          <p>La trasformazione autentica nasce dall'<strong>incontro</strong> — tra mente e corpo, tra persona e natura, tra tradizione e contemporaneità.</p>
+        </blockquote>
+        <p class="manifesto__body js-reveal js-reveal-delay-2">
+          Om Verbania è un centro di ricerca interiore e pratica clinica, fondato su un approccio transpersonale e biotransenergetico. Offriamo percorsi di cura, formazione e ospitalità in un contesto naturale e raccolto, dove il silenzio ha lo stesso valore della parola.
+        </p>
+        <span class="u-rule u-rule--center js-reveal js-reveal-delay-3" style="margin-top: 3rem;" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <!-- THREE PATHS -->
+    <section class="paths" id="percorsi" aria-labelledby="paths-heading">
+      <div class="paths__header">
+        <p class="u-label js-reveal">I percorsi</p>
+      </div>
+      <div class="paths__grid" role="list">
+
+        <article class="path-card js-reveal js-reveal-delay-1" id="guarigione" role="listitem">
+          <span class="path-card__number" aria-hidden="true">01</span>
+          <h2 class="path-card__title">Guarigione</h2>
+          <p class="path-card__desc">
+            Sostegno psicologico e percorsi psicoterapeutici individuali. Gruppi di benessere e lavoro sul corpo attraverso la biotransenergetica, per ritrovare equilibrio e vitalità.
+          </p>
+          <a href="#contatti" class="path-card__link" aria-label="Scopri di più su Guarigione">Scopri &rarr;</a>
+        </article>
+
+        <article class="path-card js-reveal js-reveal-delay-2" id="formazione" role="listitem">
+          <span class="path-card__number" aria-hidden="true">02</span>
+          <h2 class="path-card__title">Formazione</h2>
+          <p class="path-card__desc">
+            Scuola di counseling transpersonale di alto livello. Un percorso che integra psicologia moderna, lavoro sul corpo e dimensione interiore, per chi desidera accompagnare la trasformazione altrui.
+          </p>
+          <a href="#contatti" class="path-card__link" aria-label="Scopri di più su Formazione">Scopri &rarr;</a>
+        </article>
+
+        <article class="path-card js-reveal js-reveal-delay-3" id="ospitalita" role="listitem">
+          <span class="path-card__number" aria-hidden="true">03</span>
+          <h2 class="path-card__title">Ospitalità</h2>
+          <p class="path-card__desc">
+            B&amp;B immerso nella natura del Verbano. Un luogo per sostare, respirare e ritrovare il proprio centro a Scareno di Aurano, tra boschi, silenzio e lago.
+          </p>
+          <a href="#contatti" class="path-card__link" aria-label="Scopri di più su Ospitalità">Scopri &rarr;</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FOUNDERS -->
+    <section class="founders" aria-labelledby="founders-heading">
+      <div class="founders__header">
+        <p class="u-label js-reveal">Le persone</p>
+      </div>
+      <div class="founders__grid">
+
+        <article class="founder js-reveal js-reveal-delay-1">
+          <div class="founder__avatar"><img src="foto_claudia.jpg" alt="Claudia Castiglioni"></div>
+          <h3 class="founder__name">Claudia Castiglioni</h3>
+          <p class="founder__role">Arteterapeuta &middot; Counselor &middot; Formatrice</p>
+          <p class="founder__bio">
+            Artista, terapeuta transpersonale e counselor in metodologia biotransenergetica. Lavora con l'espressione creativa e gli elementi archetipici della natura come strumenti di trasformazione interiore, integrando arte, corpo e psiche in un percorso unitario.
+          </p>
+        </article>
+
+        <article class="founder js-reveal js-reveal-delay-2">
+          <div class="founder__avatar"><img src="foto_matteo.jpg" alt="Matteo Hu"></div>
+          <h3 class="founder__name">Matteo Hu</h3>
+          <p class="founder__role">Psicologo &middot; Psicoterapeuta &middot; Insegnante</p>
+          <p class="founder__bio">
+            Psicologo, psicoterapeuta e insegnante di biotransenergetica. Integra approcci tradizionali alla guarigione con la psicologia contemporanea, attraverso una prospettiva transpersonale che accoglie la complessità dell'essere umano nella sua interezza.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contatti" aria-labelledby="contact-heading">
+      <div class="contact__inner">
+        <span class="u-rule u-rule--center js-reveal" aria-hidden="true"></span>
+        <h2 class="contact__title js-reveal js-reveal-delay-1" id="contact-heading">Vieni a trovarci</h2>
+        <p class="contact__subtitle js-reveal js-reveal-delay-2">Siamo a Scareno, un piccolo borgo di Aurano nel Verbano Cusio Ossola.</p>
+        <div class="contact__grid js-reveal js-reveal-delay-3" style="grid-template-columns: 1fr 1fr;" role="list">
+          <div class="contact__item" role="listitem">
+            <span class="contact__item-label">Dove</span>
+            <span class="contact__item-value">Scareno, Aurano<br>Verbania (VB)</span>
+          </div>
+          <div class="contact__item" style="border-right: none;" role="listitem">
+            <span class="contact__item-label">Seguici</span>
+            <span class="contact__item-value">
+              <a href="https://facebook.com/omverbania" target="_blank" rel="noopener">Facebook</a><br>
+              <a href="https://instagram.com/omverbania" target="_blank" rel="noopener">Instagram</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer__copy">&copy; 2026 Associazione Om &middot; Medicina e Psicologia Integrale e Transpersonale</p>
+    <div class="footer__links">
+      <a href="privacy.html" class="footer__link">Privacy Policy</a>
+      <span class="footer__sep">&middot;</span>
+      <a href="cookie.html" class="footer__link">Cookie</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    const loader = document.getElementById('loader');
+    const video = document.querySelector('.hero__bg video');
+
+    function hideLoader() {
+      loader.classList.add('loader--hidden');
+      setTimeout(() => loader.remove(), 800);
+    }
+
+    if (video) {
+      if (video.readyState >= 3) {
+        hideLoader();
+      } else {
+        video.addEventListener('canplaythrough', hideLoader, { once: true });
+        setTimeout(hideLoader, 4000);
+      }
+    } else {
+      window.addEventListener('load', hideLoader);
+    }
+  </script>
+</body>
+</html>

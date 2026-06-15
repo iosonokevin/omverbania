@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ospitalità — Om Verbania</title>
+  <meta name="description" content="B&B olistico immerso nella natura del Verbano a Scareno di Aurano. Un luogo per sostare, respirare e ritrovare il proprio centro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu di navigazione" aria-hidden="true">
+    <button class="mobile-menu__close" id="menuClose">Chiudi</button>
+    <a href="guarigione.html" onclick="closeMenu()">Guarigione</a>
+    <a href="formazione.html" onclick="closeMenu()">Formazione</a>
+    <a href="ospitalita.html" onclick="closeMenu()">Ospitalità</a>
+    <a href="contatti.html" onclick="closeMenu()">Contatti</a>
+  </div>
+
+  <nav class="nav nav--page" id="nav" aria-label="Navigazione principale">
+    <a href="index.html" class="nav__logo">Om <em>Verbania</em></a>
+    <ul class="nav__links">
+      <li><a href="guarigione.html">Guarigione</a></li>
+      <li><a href="formazione.html">Formazione</a></li>
+      <li><a href="ospitalita.html" aria-current="page">Ospitalità</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <p class="page-hero__label js-reveal">B&amp;B olistico · Scareno di Aurano</p>
+      <h1 class="page-hero__title js-reveal js-reveal-delay-1">
+        Ospitalità
+      </h1>
+      <p class="page-hero__sub js-reveal js-reveal-delay-2">
+        Un piccolo borgo tra i boschi e il Lago Maggiore. Un luogo per sostare, per respirare, per ritrovare il ritmo naturale del proprio essere.
+      </p>
+    </section>
+
+    <!-- IL LUOGO -->
+    <section class="content-section content-section--white">
+      <div class="two-col js-reveal">
+        <div class="two-col__aside">
+          <h2 class="two-col__aside-title"><em>Scareno</em>,<br>un borgo ritrovato</h2>
+          <p class="two-col__aside-note">Aurano, Verbano Cusio Ossola. A pochi chilometri dal lago, lontano dal rumore.</p>
+        </div>
+        <div class="two-col__body">
+          <p>Scareno è un piccolo borgo di montagna che sembra fuori dal tempo. Poche case in pietra, boschi di castagni e faggi, il suono dell'acqua e il silenzio. Un luogo che invita naturalmente a rallentare, a osservare, a essere presenti.</p>
+          <p>È qui che Om Verbania ha scelto di radicarsi. Non per caso: la natura non è uno sfondo decorativo, ma una presenza attiva nel percorso di cura e di trasformazione. Gli elementi — terra, acqua, aria, fuoco — fanno parte del lavoro che proponiamo, come archetipi vivi e accessibili a chiunque sappia fermarsi ad ascoltarli.</p>
+          <p>Il B&B di Om Verbania offre ospitalità semplice e curata. Nessun lusso superfluo, ma ogni dettaglio pensato per creare un'atmosfera di qualità, raccoglimento e benessere autentico.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LE CAMERE -->
+    <section class="content-section content-section--warm">
+      <p class="u-label js-reveal" style="margin-bottom: 2.5rem;">Gli spazi</p>
+      <div class="rooms-grid">
+
+        <div class="room-card js-reveal js-reveal-delay-1">
+          <h3 class="room-card__title">Camere con vista</h3>
+          <span class="room-card__tag">Soggiorno · B&amp;B</span>
+          <p class="room-card__desc">Camere semplici e silenziose, con arredi in legno naturale e tessuti in toni neutri. Ogni camera è pensata per favorire il riposo profondo e la presenza. Luce naturale, aria pulita, silenzio.</p>
+        </div>
+
+        <div class="room-card js-reveal js-reveal-delay-2">
+          <h3 class="room-card__title">Colazione biologica</h3>
+          <span class="room-card__tag">Nutrizione · Cura</span>
+          <p class="room-card__desc">La mattina inizia con una colazione preparata con ingredienti locali e biologici. Pane artigianale, marmellate di frutta selvatica, miele dei boschi del Verbano. Un rito quotidiano di cura e attenzione.</p>
+        </div>
+
+        <div class="room-card js-reveal js-reveal-delay-3">
+          <h3 class="room-card__title">Spazio per pratiche</h3>
+          <span class="room-card__tag">Movimento · Meditazione</span>
+          <p class="room-card__desc">Uno spazio dedicato alle pratiche corporee, alla meditazione e al lavoro interiore. Disponibile per gli ospiti del B&B e per i partecipanti ai ritiri e ai gruppi organizzati dall'associazione.</p>
+        </div>
+
+        <div class="room-card js-reveal js-reveal-delay-1">
+          <h3 class="room-card__title">Natura circostante</h3>
+          <span class="room-card__tag">Boschi · Sentieri · Lago</span>
+          <p class="room-card__desc">Sentieri tra i boschi, sorgenti d'acqua, viste sul Lago Maggiore. La natura del Verbano è il giardino di Om Verbania. Camminate guidate e soste contemplative possono essere organizzate su richiesta.</p>
+        </div>
+
+        <div class="room-card js-reveal js-reveal-delay-2">
+          <h3 class="room-card__title">Ritiri residenziali</h3>
+          <span class="room-card__tag">Weekend · Immersione</span>
+          <p class="room-card__desc">Om Verbania organizza periodicamente ritiri residenziali che combinano l'ospitalità del B&B con sessioni di lavoro terapeutico, pratica corporea e immersione nella natura. Un'esperienza totale di rigenerazione.</p>
+        </div>
+
+        <div class="room-card js-reveal js-reveal-delay-3">
+          <h3 class="room-card__title">Soggiorni su misura</h3>
+          <span class="room-card__tag">Personalizzazione · Cura</span>
+          <p class="room-card__desc">Possibilità di costruire un soggiorno personalizzato che combini pernottamento, sessioni individuali, partecipazione a gruppi e attività nella natura. Ogni ospite è accolto nella sua unicità.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COME ARRIVARE -->
+    <section class="content-section content-section--white">
+      <p class="u-label js-reveal" style="margin-bottom: 2.5rem;">Come raggiungerci</p>
+      <div class="two-col js-reveal">
+        <div class="two-col__aside">
+          <h2 class="two-col__aside-title">Scareno,<br><em>Aurano</em></h2>
+          <p class="two-col__aside-note">Verbano Cusio Ossola, Piemonte.</p>
+        </div>
+        <div class="two-col__body">
+          <p>Scareno si trova nel comune di Aurano, a circa 700 metri di quota, raggiungibile da Verbania in circa 30 minuti di auto. La strada si inerpica tra i boschi e offre viste magnifiche sul lago. Il borgo è piccolo: bastano poche indicazioni per trovare Om Verbania una volta arrivati.</p>
+          <p>Non esistono trasporti pubblici diretti fino a Scareno. Chi non dispone di un'auto può essere accompagnato dalla stazione di Verbania su richiesta, da concordare al momento della prenotazione.</p>
+          <p>L'isolamento del luogo non è un limite: è parte dell'esperienza. Il distacco temporaneo dalla velocità quotidiana è già, di per sé, un atto terapeutico.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-banner js-reveal">
+      <h2 class="cta-banner__title">Prenota il tuo soggiorno</h2>
+      <p class="cta-banner__sub">Disponibilità e informazioni su prenotazione diretta.</p>
+      <a href="contatti.html" class="cta-banner__link">Scrivici &rarr;</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">&copy; 2026 Associazione Om &middot; Medicina e Psicologia Integrale e Transpersonale</p>
+    <div class="footer__links">
+      <a href="privacy.html" class="footer__link">Privacy Policy</a>
+      <span class="footer__sep">&middot;</span>
+      <a href="cookie.html" class="footer__link">Cookie</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
